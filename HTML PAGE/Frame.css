@@ -1,0 +1,26 @@
+<style>
+        .Div1 {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100%;
+            height: 20%;
+            border: 1px solid silver
+
+        .Div2 {
+            position: absolute;
+            top: 130px;
+            left: 10px;
+            width: 20%;
+            height: 70%;
+            border: 1px solid silver;
+        }
+        .Div3 {
+            position: absolute;
+            top: 130px;
+            left: 280px;
+            width: 80%;
+            height: 70%;
+            border: 1px solid silver;
+        }
+    </style>
