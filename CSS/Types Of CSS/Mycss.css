@@ -1,0 +1,8 @@
+.MyHeading-3{
+    border: 2px solid blueviolet;
+    text-align: center;
+    width: 50%;
+    color: blue;
+    background-color: paleturquoise;
+    cursor: pointer;
+}
