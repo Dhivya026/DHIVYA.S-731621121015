@@ -6,27 +6,103 @@
     <script>
         let str = " Dhivya Saravanan ";
         let str1 = "Hi Welcome";
-        let str2 = "Dogs are cute pet and I love dogs. Dogs are friendly"
-        let length = str.length;
-        let char = str.charAt(7);
-        let result = str.slice(0,6);
-        let sub = str.substring(0,3);
-        let substr = str.substr(7);
-        let upper = str.toUpperCase();
-        let lower = str.toLowerCase();
-        let concat = str.concat("KSR");
-        let trim = str.trim();
-        let trimstart = str.trimStart();
-        let trimend = str.trimEnd();
-        let repeat = str.repeat(3);
-        let replace = str1.replace(Hi,Thanks);
-        let replaceall = str2.replaceAll(Dogs,Cat);
-        let split = str.split(" ");
-        var output = str+"<br>"+length+"<br>"+char+"<br>"
-        +result+"<br>"+sub+"<br>"+substr+"<br>"+upper+"<br>"+lower+"<br>"
-        +concat+"<br>"+trim+"<br>"+trimstart+"<br>"+trimend+"<br>"+repeat+"<br>"
-        +replace+"<br>"+replaceall+"<br>"+split;
-        document.write(output);
+        let str2 = "Dogs are cute pet and I love Dogs. Dogs are friendly"
+        function myFunction(){
+            document.write("<b>JavaScript String Operations</b>");
+        }
+        function length(){
+            let len = str.length;
+            document.write("<b>Length : "+len);
+        }
+        function character(){
+            let char = str.charAt(4);
+            document.write("<b>Character : "+char);
+        }
+        function result(){
+            let slice = str.slice(0,6);
+            document.write("<b>Slice : "+slice);
+        }
+        function substring(){
+            let sub = str.substring(0,3);
+            document.write("<b>Substring : "+sub);
+        }
+        function upper(){
+            let up = str.toUpperCase();
+            document.write("<b>UpperCase : "+up);
+        }
+        function lower(){
+            let low = str.toLowerCase();
+            document.write("<b>LowerCase : "+low);
+        }
+        function concat(){
+            let con = str.concat("KSR");
+            document.write("<b>Concat : "+con);
+        }
+        function trim(){
+            let trim1 = str.trim();
+            document.write("<b>Trim : "+trim1);
+        }
+        function trimStart(){
+            let trim3 = str.trimStart();
+            document.write("<b>TrimStart : "+trim3);
+        }
+        function trimend(){
+            let trim2 = str.trimEnd();
+            document.write("<b>Trimend : "+trim2);
+        }
+        
+        function repeat(){
+            let re = str.repeat(3);
+            document.write("<b>Repeat : "+re);
+        }
+        function replace(){
+            let replace1 = str1.replace("Hi","Thanks");
+            document.write("<b>Replace : "+replace1);
+        }
+        function replaceall(){
+            let replace2 = str2.replaceAll("Dogs","Cats");
+            document.write("<b>ReplaceAll : "+replace2);
+        }
+        function split(){
+            let sp = str.split(" ");
+            document.write("<b>Split : "+sp);
+        }
+
+        
+
+            
+    </script>
+    
+</head>
+<body>
+    <button onclick="myFunction()">Click Me</button>
+    <br><br>
+    <button onclick="length()">Length</button>
+    <br><br>
+    <button onclick="character()">Char</button><br><br>
+    <button onclick="result()">Result</button>
+    <br><br>
+    <button onclick="substring()">Substring</button>
+    <br><br>
+    <button onclick="upper()">Upper</button><br><br>
+    <button onclick="lower()">Lower</button>
+    <br><br>
+    <button onclick="concat()">Concat</button>
+    <br><br>
+    <button onclick="trim()">Trim</button><br><br>
+    <button onclick="trimStart()">trimstart</button>
+    <br><br>
+    <button onclick="trimend()">Trimend</button>
+    <br><br>
+    <button onclick="repeat()">Repeat</button><br><br>
+    <button onclick="replace()">Replace</button><br><br>
+    <button onclick="replaceall()">ReplaceAll</button>
+    <br><br>
+    <button onclick="split()">Split</button>
+    <br><br>
+    
+</body>
+</html>
     </script>
 </head>
 <body>
