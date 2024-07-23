@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let str = " Dhivya Saravanan ";
+        let str1 = "Hi Welcome";
+        let str2 = "Dogs are cute pet and I love dogs. Dogs are friendly"
+        let length = str.length;
+        let char = str.charAt(7);
+        let result = str.slice(0,6);
+        let sub = str.substring(0,3);
+        let substr = str.substr(7);
+        let upper = str.toUpperCase();
+        let lower = str.toLowerCase();
+        let concat = str.concat("KSR");
+        let trim = str.trim();
+        let trimstart = str.trimStart();
+        let trimend = str.trimEnd();
+        let repeat = str.repeat(3);
+        let replace = str1.replace(Hi,Thanks);
+        let replaceall = str2.replaceAll(Dogs,Cat);
+        let split = str.split(" ");
+        var output = str+"<br>"+length+"<br>"+char+"<br>"
+        +result+"<br>"+sub+"<br>"+substr+"<br>"+upper+"<br>"+lower+"<br>"
+        +concat+"<br>"+trim+"<br>"+trimstart+"<br>"+trimend+"<br>"+repeat+"<br>"
+        +replace+"<br>"+replaceall+"<br>"+split;
+        document.write(output);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
