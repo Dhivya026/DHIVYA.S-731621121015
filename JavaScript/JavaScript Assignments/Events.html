@@ -4,9 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JavaScript Events</title>
+  <style>
+    .btn{
+      background-color: blanchedalmond;
+    }
+    .txt{
+      color: brown;
+      font-weight: bold;
+    }
+  #mouseoverDiv{
+    color: blueviolet;
+    font-weight: bold;
+  }
+  #mouseoutDiv{
+    color: rgb(170, 16, 106);
+    font-weight: bold;
+  }
+  .div{
+    color: cadetblue;
+    font-weight: bold;
+  }
+  #changeInput{
+    color: blue;
+    font-weight: bold;
+  }
+
+  </style>
   <script>
     function handleClick() {
-      document.getElementById('output').innerHTML = '<p>Button clicked!</p>';
+      document.getElementById('output').innerHTML = '<p>Button clicked!</p> ';
     }
 
     function handleMouseOver() {
@@ -31,17 +57,17 @@
 <body>
   <h2>JavaScript Events</h2>
   
-  <div>
+  <div class="txt">
     
     Enter Text: <input type="text" id="inputText" onkeyup="handleKeyUp(event)">
   </div>
 
-  <button onclick="handleClick()">Click Me</button>
+  <button class="btn" onclick="handleClick()">Click Me</button>
 
   <div id="mouseoverDiv" onmouseover="handleMouseOver()">Mouse over me</div>
   <div id="mouseoutDiv" onmouseout="handleMouseOut()">Mouse out of me</div>
 
-  <div>
+  <div class="div">
     <label for="changeInput">Select an option:</label>
     <select id="changeInput" onchange="handleChange(event)">
       <option value="option1">Option 1</option>
