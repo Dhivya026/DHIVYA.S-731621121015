@@ -1,0 +1,201 @@
+* {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+}
+body {
+        font-family: Arial, sans-serif;
+}
+.nav {
+        line-height: 28px;
+        background-color: brown;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        color: white;
+}
+.nav ul {
+        display: flex;
+        list-style: none;
+}
+.nav ul li {
+        margin-right: 20px;
+}
+.nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 12px;
+}
+.nav h2 {
+        font-size: 12px;
+}
+.head {
+        background-color: red;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+}
+.logoimg img {
+        height: 30px;
+}
+.search {
+        width: 60%;
+        display: flex;
+        align-items: center;
+}
+        .search input {
+            width: 80%;
+            height: 38px;
+            border: none;
+            border-radius: 2px;
+            font-size: 16px;
+            padding-left: 10px;
+        }
+        .search button {
+            width: 20%;
+            height: 38px;
+            background-color:black;
+            color: white;
+            border: none;
+            border-radius: 2px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .moreitemslist {
+            display: flex;
+            align-items: center;
+        }
+        .moreitemslist .moreitems1, .moreitemslist .moreitems2 {
+            padding: 0 20px;
+        }
+        .moreitems1 a, .moreitems2 a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        
+        .categories {
+            background-color: white;
+            padding: 20px;
+        }
+        .categories h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .categories ul {
+            list-style: none;
+        }
+        .categories ul li {
+            margin-bottom: 10px;
+        }
+        .categories ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+        .searchterms {
+            background-color: white;
+            padding: 20px;
+            border-top: 1px solid white;
+        }
+        .searchterms h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .searchterms ul {
+            list-style: none;
+        }
+        .searchterms ul li {
+            margin-bottom: 10px;
+         }
+        .searchterms ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+        body{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color:red;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .navbar input {
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+        .side-menu {
+            background-color: #f5f5f5f4;
+            padding: 15px;
+            width: 250px;
+            float: left;
+        }
+
+        .side-menu p {
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        .side-menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .side-menu ul li {
+            margin-bottom: 10px;
+        }
+
+        .side-menu ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        .main-content img {
+            width: 60%;
+            padding-left: 40px;
+           
+        }
+        .main-content li{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            float: left;
+            
+        }
+        .list{
+            display: flex;
+            justify-content: space-between;
+            width: 60%;
+            color:red;
+        }
+        .box{
+            width: 250px;
+            height: 350px;
+            background-color: #333;
+            padding: 0 5% 0 0;
+        }
+        
+       
+
+
+
+
+
+          
+        
