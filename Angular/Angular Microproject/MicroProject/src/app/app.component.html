@@ -4,66 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospital Management System</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-        .navbar {
-            background: #579BB1;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        nav ul li {
-            display: inline;
-            margin: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th,td {
-            padding: 8px;
-            text-align: left;
-        }
-        thead {
-            background-color: #579BB1;
-            color: #fff;
-        }
-        button{
-            height: 30px;
-            display:inline;
-            margin: 10px;
-          
-           
-           
-        }
-
-    </style>
+    <link rel="stylesheet" href="app.component.css">
+    
 </head>
 <body>
-        <nav class="navbar">
-            <h1>Hospital Management System</h1>
+        <nav [ngClass]="navbar">
+            <h1 >Hospital Management System</h1>
             <ul>
                 <li>Dashboard</li>
                 <li>Patients</li>
                 <li>Staff</li>
                 <li>Appointments</li>
-                <li>Billing</li>
+                
             </ul>
         </nav>
         <div>
             <h2>Dashboard</h2>
-            <p>Welcome to the Hospital Management System.</p>
+            <p [ngStyle]="MyStyle">Welcome to the Hospital Management System.</p>
         </div>
-
         <div>
             <h2>Patients</h2>
             <table>
@@ -106,14 +64,9 @@
                             <td><input type="text" placeholder="Enter Gender"><br><br></td>
                             <td><input type="text" placeholder="Enter Contact"><br><br></td>
                         </tr>
-
-                    
-                   
-                  
-                </tbody>
-                
-            </table>
-            <button>Save</button><button>Update</button><button>Delete</button>
+                    </tbody>
+                </table>
+                <div [ngClass]="button"><button>Insert</button><button>Update</button><button>Delete</button><button>Find</button><button>Find All</button></div> 
         </div>
 
         <div>
@@ -152,20 +105,16 @@
                         <td>Doctor</td>
                         <td>451-654-9870</td>
                     </tr>
-
-                   
                     <tr>
                         <td><input type="text" placeholder="Enter Id"><br><br></td>
                         <td><input type="text" placeholder="Enter Name"><br><br></td>
                         <td><input type="text" placeholder="Enter Role"><br><br></td>
                         <td><input type="text" placeholder="Enter Contact"><br><br></td>
                     </tr>
-               
                </tbody>
             </table>
-            <button>Save</button><button>Update</button><button>Delete</button>
+           <div [ngClass]="button"><button >Insert</button><button>Update</button><button>Delete</button><button>Find</button><button>Find All</button></div> 
         </div>
-
         <div>
             <h2>Appointments</h2>
             <table>
@@ -200,58 +149,9 @@
                         <td><input type="text" placeholder="Enter Date"><br><br></td>
                         <td><input type="text" placeholder="Enter Time"><br><br></td>
                     </tr>
-
-                   
                 </tbody>
             </table>
-            <button>Save</button><button>Update</button><button>Delete</button>
+            <div [ngClass]="button"><button >Insert</button><button>Update</button><button>Delete</button><button>Find</button><button>Find All</button></div> 
         </div>
-
-        <div>
-            <h2>Billing</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Patient</th>
-                        <th>Amount</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Rithika Rajavel</td>
-                        <td>50,000</td>
-                        <td>Paid</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Heera Rasheedh</td>
-                        <td>20,000</td>
-                        <td>UnPaid</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Jeevitha Velusamy</td>
-                        <td>20,000</td>
-                        <td>Paid</td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" placeholder="Enter Id"><br><br></td>
-                        <td><input type="text" placeholder="Enter Patient Name"><br><br></td>
-                        <td><input type="text" placeholder="Enter Amount"><br><br></td>
-                        <td><input type="text" placeholder="Enter Status"><br><br></td>
-                        
-                    </tr>
-                    </tbody>
-            </table>
-            
-            <button>Save</button><button>Update</button><button>Delete</button>
-        </div>
-   
-
-
-   
-</body>
+    </body>
 </html>
