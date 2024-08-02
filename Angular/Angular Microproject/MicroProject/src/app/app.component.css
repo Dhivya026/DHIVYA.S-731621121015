@@ -12,26 +12,22 @@ nav ul li {
     display: inline;
     margin: 20px;
 }
-table {
-    width: 100%;
-    margin-bottom: 20px;
-    border-collapse: collapse;
 
-}
-table, th, td {
-    border: 1px solid #ddd;
-    border-style:outset;
-}
-th,td {
-    padding: 8px;
-    text-align: left;
-}
-thead {
-    background-color: #579BB1;
-    color: #fff;
-}
 button{
     height: 30px;
     display:inline;
     margin: 10px;
+}
+.box{
+    width: 50%;
+    height: 50%;
+    background-color: #579BB1;
+    margin-left: 25%;
+    padding: 80px;
+    
+    border-radius: 20px;
+}
+input{
+    width: 90%;
+    height: 35px;
 }

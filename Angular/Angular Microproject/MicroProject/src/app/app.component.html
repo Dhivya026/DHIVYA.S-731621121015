@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospital Management System</title>
     <link rel="stylesheet" href="app.component.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
     
 </head>
 <body>
-        <nav [ngClass]="navbar">
-            <h1 >Hospital Management System</h1>
+        <nav class="navbar">
+            <h1>Hospital Management System</h1>
             <ul>
                 <li>Dashboard</li>
                 <li>Patients</li>
@@ -18,140 +19,50 @@
                 
             </ul>
         </nav>
-        <div>
-            <h2>Dashboard</h2>
-            <p [ngStyle]="MyStyle">Welcome to the Hospital Management System.</p>
-        </div>
-        <div>
-            <h2>Patients</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Age</th>
-                        <th>Gender</th>
-                        <th>Contact</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Priya Narayanan</td>
-                        <td>21</td>
-                        <td>Female</td>
-                        <td>6334567890</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Agilambal Sitheswaren</td>
-                        <td>25</td>
-                        <td>Female</td>
-                        <td>9834567890</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Mounika Srinivasan</td>
-                        <td>30</td>
-                        <td>Female</td>
-                        <td>8634567890</td>
-                    </tr>
-                
-                        <tr>
-                            <td><input type="text" placeholder="Enter Id"><br><br></td>
-                            <td><input type="text" placeholder="Enter Name"><br><br></td>
-                            <td><input type="text" placeholder="Enter Age"><br><br></td>
-                            <td><input type="text" placeholder="Enter Gender"><br><br></td>
-                            <td><input type="text" placeholder="Enter Contact"><br><br></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div [ngClass]="button"><button>Insert</button><button>Update</button><button>Delete</button><button>Find</button><button>Find All</button></div> 
+       
+        <div class="box">
+            <b><h2>Patients Details</h2></b><br><br>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+            <form #myForm="ngForm">
+                <div class="form-group">
+                    <label for="Patient Id">
+                        Patient Id
+                    </label>
+            <b>Enter Id</b> <br> <input type="text" placeholder="Enter Id" class="form-control" 
+            name="PatientId" 
+            #PatientId="ngModel" ngModel
+            required
+            pattern="[0-9]+" />
+                </div>
+            <div *ngIf="PatientId.touched">
+                <div *ngIf="PatientId.errors?.['required']">
+                  <b style="color: red;">Patient Id required</b>
+                </div>
+                <div *ngIf="PatientId.errors?.['pattern']">
+                  <font color="red"><b>Invalid Patient Id</b></font>
+                </div>
+              </div>
+            </form>
+            </div>
+      
+                            
+    </div>
+</div>
+
+
+        
+  
+           
+             <b> Enter Name </b> <br> <input type="text" placeholder="Enter Name"><br><br>
+            <b> Enter Age </b><br> <input type="text" placeholder="Enter Age"><br><br>
+           <b> Enter Gender </b><br><input type="text" placeholder="Enter Gender"><br><br>
+           
+            <div><button class="btn btn-success" (click)="fun(myForm.value)">Insert</button><button class="btn btn-primary">Update</button><button class="btn btn-danger">Delete</button><button class="btn btn-warning">Find</button><button class="btn btn-info">Find All</button></div> 
         </div>
 
-        <div>
-            <h2>Staff</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Role</th>
-                        <th>Contact</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Dr. Dhivya Saravanan</td>
-                        <td>Doctor</td>
-                        <td>321-654-9870</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Dr. RadhaKrishnan</td>
-                        <td>Doctor</td>
-                        <td>451-654-9870</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Dr. Ramki</td>
-                        <td>Doctor</td>
-                        <td>451-654-9870</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Dr. Poongodhai</td>
-                        <td>Doctor</td>
-                        <td>451-654-9870</td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" placeholder="Enter Id"><br><br></td>
-                        <td><input type="text" placeholder="Enter Name"><br><br></td>
-                        <td><input type="text" placeholder="Enter Role"><br><br></td>
-                        <td><input type="text" placeholder="Enter Contact"><br><br></td>
-                    </tr>
-               </tbody>
-            </table>
-           <div [ngClass]="button"><button >Insert</button><button>Update</button><button>Delete</button><button>Find</button><button>Find All</button></div> 
-        </div>
-        <div>
-            <h2>Appointments</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Patient</th>
-                        <th>Doctor</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Madhubala Srinivasan</td>
-                        <td>Dr. Thiyagarajan</td>
-                        <td>31-07-2003</td>
-                        <td>09:48 AM</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Priya Narayanan</td>
-                        <td>Dr. Rajakumari </td>
-                        <td>26-11-2003</td>
-                        <td>05:30 AM</td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" placeholder="Enter Id"><br><br></td>
-                        <td><input type="text" placeholder="Enter Patient Name"><br><br></td>
-                        <td><input type="text" placeholder="Enter Doctor Name"><br><br></td>
-                        <td><input type="text" placeholder="Enter Date"><br><br></td>
-                        <td><input type="text" placeholder="Enter Time"><br><br></td>
-                    </tr>
-                </tbody>
-            </table>
-            <div [ngClass]="button"><button >Insert</button><button>Update</button><button>Delete</button><button>Find</button><button>Find All</button></div> 
-        </div>
+       
+       
     </body>
 </html>

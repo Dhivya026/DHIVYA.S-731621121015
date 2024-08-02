@@ -9,18 +9,51 @@ import { EmployeeService } from './employee.service';
 })
 export class AppComponent {
   employee : Employee;
+  result : string;
+  employeeArr : Employee[];
+  flag : boolean;
  
 
-  constructor(private service : EmployeeService){
+  constructor(private employeeservice : EmployeeService){
     this.employee = new Employee();
+    this.result = "";
+    this.employeeArr =[];
+    this.flag=false;
   }
   insertEmployee(data:any){
-    this.employee.empId=data.empId;
+    this.employee.id=data.empId;
     this.employee.empName=data.empName;
     this.employee.empSalary=data.empSalary;
+    this.result = this.employeeservice.insertEmployee(this.employee);
 
-    this.service.insertEmployee(this.employee)
-    alert(data.empId+" "+ data.empName+" " +data.empSalary);
+    //this.service.insertEmployee(this.employee)
+    //alert(data.empId+" "+ data.empName+" " +data.empSalary);
    
   }
+  updateEmployee(data:any){
+    this.employee.id=data.empId;
+    this.employee.empName=data.empName;
+    this.employee.empSalary=data.empSalary;
+    this.result = this.employeeservice.upadteEmployee(this.employee);
+
+    
+
+    //this.service.insertEmployee(this.employee)
+    //alert(data.empId+" "+ data.empName+" " +data.empSalary);
+   
+  }
+  deleteEmployee(data:any){
+    this.result = this.employeeservice.deleteEmployee(data.empId);
+
+  }
+  findEmployee(data:any){
+    this.employee = this.employeeservice.findEmployee(data.empId);
+    this.result = this.employee.id + " " + this.employee.empName +" "+ this.employee.empSalary;
+
+  }
+  findAllEmployee(){
+    this.employeeArr=this.employeeservice.findAllEmployee();
+    this.flag =true;
+  }
 }
+

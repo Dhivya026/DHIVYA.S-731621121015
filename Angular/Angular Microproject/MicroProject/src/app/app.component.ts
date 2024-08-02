@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { title } from 'node:process';
+import { Patient } from '../model/Patient';
 
 @Component({
   selector: 'app-root',
@@ -6,12 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  navbar :string;
-  MyStyle :{};
-  button :string;
+  title = 'Project';
+  Pat:Patient;
   constructor(){
-    this.navbar="navbar";
-    this.MyStyle={'font-style':'italic','color':'blue'};
-    this.button="button";
+    this.Pat=new Patient();
   }
 }
