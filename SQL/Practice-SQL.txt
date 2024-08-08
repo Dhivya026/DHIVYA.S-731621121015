@@ -1,0 +1,588 @@
+
+SQL*Plus: Release 11.2.0.2.0 Production on Wed Aug 7 14:00:42 2024
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect system
+Enter password:
+Connected.
+SQL> create table employee(id number(5),name varchar2(10),salary number(5));
+
+Table created.
+
+SQL> insert into employee(15,'Dhivya',50000);
+insert into employee(15,'Dhivya',50000)
+                     *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword
+
+
+SQL> insert into employee values(15,'Dhivya',50000);
+
+1 row created.
+
+SQL> insert into employee values(43,'priya',40000);
+
+1 row created.
+
+SQL> insert into employee values(63,'Madhu',30000);
+
+1 row created.
+
+SQL> select * from employee;
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        15 Dhivya          50000
+        43 priya           40000
+        63 Madhu           30000
+
+SQL> select * from employee where id in (15,63);
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        15 Dhivya          50000
+        63 Madhu           30000
+
+SQL> select * from employee where id not in (15,63);
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        43 priya           40000
+
+SQL> select * from employee where salary not between 20000 and 40000;
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        15 Dhivya          50000
+
+SQL> select * from employee where salary between 20000 and 40000;
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        43 priya           40000
+        63 Madhu           30000
+
+SQL> insert into employee(12,'Akila',10000);
+insert into employee(12,'Akila',10000)
+                     *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword
+
+
+SQL> insert into employee values(12,'Akila',10000);
+
+1 row created.
+
+SQL> insert into employee values(22,'Fathima',20000);
+
+1 row created.
+
+SQL> insert into employee values(23,'Anu',45000);
+
+1 row created.
+
+SQL> insert into employee values(56,'Keerthika',25000);
+
+1 row created.
+
+SQL> insert into employee values(45,'Shobana',35000);
+
+1 row created.
+
+SQL> select * from employee;
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        15 Dhivya          50000
+        43 priya           40000
+        63 Madhu           30000
+        12 Akila           10000
+        22 Fathima         20000
+        23 Anu             45000
+        56 Keerthika       25000
+        45 Shobana         35000
+
+8 rows selected.
+
+SQL> select * from employee where id in (15,12,23) and salary >40000;
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        15 Dhivya          50000
+        23 Anu             45000
+
+SQL> select * from employee where id in (15,12,23) or salary >40000;
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        15 Dhivya          50000
+        12 Akila           10000
+        23 Anu             45000
+
+SQL> select * from employee where id in (15,12,23) or salary <40000;
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        15 Dhivya          50000
+        63 Madhu           30000
+        12 Akila           10000
+        22 Fathima         20000
+        23 Anu             45000
+        56 Keerthika       25000
+        45 Shobana         35000
+
+7 rows selected.
+
+SQL> select * from employee where id > 50 and salary >40000;
+
+no rows selected
+
+SQL> select * from employee where id > 50 or salary >40000;
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        15 Dhivya          50000
+        63 Madhu           30000
+        23 Anu             45000
+        56 Keerthika       25000
+
+SQL> insert into employee (id,salary) values(45,67000);
+
+1 row created.
+
+SQL> select * from employee;
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        15 Dhivya          50000
+        43 priya           40000
+        63 Madhu           30000
+        12 Akila           10000
+        22 Fathima         20000
+        23 Anu             45000
+        56 Keerthika       25000
+        45 Shobana         35000
+        45                 67000
+
+9 rows selected.
+
+SQL> select * from employee where name is not null;
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        15 Dhivya          50000
+        43 priya           40000
+        63 Madhu           30000
+        12 Akila           10000
+        22 Fathima         20000
+        23 Anu             45000
+        56 Keerthika       25000
+        45 Shobana         35000
+
+8 rows selected.
+
+SQL> select * from employee where name is null;
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        45                 67000
+
+SQL> select * from employee where name like '%A';
+
+no rows selected
+
+SQL> select * from employee where name like 'A%';
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        12 Akila           10000
+        23 Anu             45000
+
+SQL> select * from employee where name like '__A%';
+
+no rows selected
+
+SQL> select * from employee where name like '__r%';
+
+no rows selected
+
+SQL> select * from employee where name like '__e%';
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        56 Keerthika       25000
+
+SQL> select * from employee;
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        15 Dhivya          50000
+        43 priya           40000
+        63 Madhu           30000
+        12 Akila           10000
+        22 Fathima         20000
+        23 Anu             45000
+        56 Keerthika       25000
+        45 Shobana         35000
+        45                 67000
+
+9 rows selected.
+
+SQL> select * from employee order by id;
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        12 Akila           10000
+        15 Dhivya          50000
+        22 Fathima         20000
+        23 Anu             45000
+        43 priya           40000
+        45                 67000
+        45 Shobana         35000
+        56 Keerthika       25000
+        63 Madhu           30000
+
+9 rows selected.
+
+SQL> select * from employee order by id desc;
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        63 Madhu           30000
+        56 Keerthika       25000
+        45 Shobana         35000
+        45                 67000
+        43 priya           40000
+        23 Anu             45000
+        22 Fathima         20000
+        15 Dhivya          50000
+        12 Akila           10000
+
+9 rows selected.
+
+SQL> select * from employee order by name desc;
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        45                 67000
+        43 priya           40000
+        45 Shobana         35000
+        63 Madhu           30000
+        56 Keerthika       25000
+        22 Fathima         20000
+        15 Dhivya          50000
+        23 Anu             45000
+        12 Akila           10000
+
+9 rows selected.
+
+SQL> select * from employee order by name ;
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        12 Akila           10000
+        23 Anu             45000
+        15 Dhivya          50000
+        22 Fathima         20000
+        56 Keerthika       25000
+        63 Madhu           30000
+        45 Shobana         35000
+        43 priya           40000
+        45                 67000
+
+9 rows selected.
+
+SQL> alter table employee add doj date;
+
+Table altered.
+
+SQL> select * from employee;
+
+        ID NAME           SALARY DOJ
+---------- ---------- ---------- ---------
+        15 Dhivya          50000
+        43 priya           40000
+        63 Madhu           30000
+        12 Akila           10000
+        22 Fathima         20000
+        23 Anu             45000
+        56 Keerthika       25000
+        45 Shobana         35000
+        45                 67000
+
+9 rows selected.
+
+SQL> alter table employee add dob date;
+
+Table altered.
+
+SQL> select * from employee;
+
+        ID NAME           SALARY DOJ       DOB
+---------- ---------- ---------- --------- ---------
+        15 Dhivya          50000
+        43 priya           40000
+        63 Madhu           30000
+        12 Akila           10000
+        22 Fathima         20000
+        23 Anu             45000
+        56 Keerthika       25000
+        45 Shobana         35000
+        45                 67000
+
+9 rows selected.
+
+SQL> desc employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                                 NUMBER(5)
+ NAME                                               VARCHAR2(10)
+ SALARY                                             NUMBER(5)
+ DOJ                                                DATE
+ DOB                                                DATE
+
+SQL> update employee set doj=sysdate where id =15;
+
+1 row updated.
+
+SQL> desc employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                                 NUMBER(5)
+ NAME                                               VARCHAR2(10)
+ SALARY                                             NUMBER(5)
+ DOJ                                                DATE
+ DOB                                                DATE
+
+SQL> select * from employee;
+
+        ID NAME           SALARY DOJ       DOB
+---------- ---------- ---------- --------- ---------
+        15 Dhivya          50000 07-AUG-24
+        43 priya           40000
+        63 Madhu           30000
+        12 Akila           10000
+        22 Fathima         20000
+        23 Anu             45000
+        56 Keerthika       25000
+        45 Shobana         35000
+        45                 67000
+
+9 rows selected.
+
+SQL> update employee set doj='26-Jul-2004' where id =15;
+
+1 row updated.
+
+SQL> select * from employee;
+
+        ID NAME           SALARY DOJ       DOB
+---------- ---------- ---------- --------- ---------
+        15 Dhivya          50000 26-JUL-04
+        43 priya           40000
+        63 Madhu           30000
+        12 Akila           10000
+        22 Fathima         20000
+        23 Anu             45000
+        56 Keerthika       25000
+        45 Shobana         35000
+        45                 67000
+
+9 rows selected.
+
+SQL> update employee set doj=sysdate where id =15;
+
+1 row updated.
+
+SQL> update employee set dob='26-Jul-2004' where id =15;
+
+1 row updated.
+
+SQL> select * from employee;
+
+        ID NAME           SALARY DOJ       DOB
+---------- ---------- ---------- --------- ---------
+        15 Dhivya          50000 07-AUG-24 26-JUL-04
+        43 priya           40000
+        63 Madhu           30000
+        12 Akila           10000
+        22 Fathima         20000
+        23 Anu             45000
+        56 Keerthika       25000
+        45 Shobana         35000
+        45                 67000
+
+9 rows selected.
+
+SQL> update employee set doj='26-aug-24' where id =43;
+
+1 row updated.
+
+SQL> update employee set dob='26-nov-03' where id =43;
+
+1 row updated.
+
+SQL> update employee set dob='31-jul-03' where id =63;
+
+1 row updated.
+
+SQL> update employee set doj='25-nov-97' where id =63;
+
+1 row updated.
+
+SQL> update employee set dob='03-sep-03' where id =12;
+
+1 row updated.
+
+SQL> update employee set doj='06-nav-03' where id =12;
+update employee set doj='06-nav-03' where id =12
+                        *
+ERROR at line 1:
+ORA-01843: not a valid month
+
+
+SQL> update employee set doj='06-nov-03' where id =12;
+
+1 row updated.
+
+SQL> select * from employee;
+
+        ID NAME           SALARY DOJ       DOB
+---------- ---------- ---------- --------- ---------
+        15 Dhivya          50000 07-AUG-24 26-JUL-04
+        43 priya           40000 26-AUG-24 26-NOV-03
+        63 Madhu           30000 25-NOV-97 31-JUL-03
+        12 Akila           10000 06-NOV-03 03-SEP-03
+        22 Fathima         20000
+        23 Anu             45000
+        56 Keerthika       25000
+        45 Shobana         35000
+        45                 67000
+
+9 rows selected.
+
+SQL> update employee set doj='26-jan-24' where id =63;
+
+1 row updated.
+
+SQL> update employee set doj='14-feb-24' where id =22;
+
+1 row updated.
+
+SQL> update employee set doj='14-dec-24' where id =23;
+
+1 row updated.
+
+SQL> update employee set doj='14-dec-24' where id =56;
+
+1 row updated.
+
+SQL> update employee set doj='23-dec-24' where id =45;
+
+2 rows updated.
+
+SQL> select * from employee;
+
+        ID NAME           SALARY DOJ       DOB
+---------- ---------- ---------- --------- ---------
+        15 Dhivya          50000 07-AUG-24 26-JUL-04
+        43 priya           40000 26-AUG-24 26-NOV-03
+        63 Madhu           30000 26-JAN-24 31-JUL-03
+        12 Akila           10000 06-NOV-03 03-SEP-03
+        22 Fathima         20000 14-FEB-24
+        23 Anu             45000 14-DEC-24
+        56 Keerthika       25000 14-DEC-24
+        45 Shobana         35000 23-DEC-24
+        45                 67000 23-DEC-24
+
+9 rows selected.
+
+SQL> alter table employee drop column dob;
+
+Table altered.
+
+SQL> select * from employee;
+
+        ID NAME           SALARY DOJ
+---------- ---------- ---------- ---------
+        15 Dhivya          50000 07-AUG-24
+        43 priya           40000 26-AUG-24
+        63 Madhu           30000 26-JAN-24
+        12 Akila           10000 06-NOV-03
+        22 Fathima         20000 14-FEB-24
+        23 Anu             45000 14-DEC-24
+        56 Keerthika       25000 14-DEC-24
+        45 Shobana         35000 23-DEC-24
+        45                 67000 23-DEC-24
+
+9 rows selected.
+
+SQL> alter table employee drop column doj;
+
+Table altered.
+
+SQL> select * from employee;
+
+        ID NAME           SALARY
+---------- ---------- ----------
+        15 Dhivya          50000
+        43 priya           40000
+        63 Madhu           30000
+        12 Akila           10000
+        22 Fathima         20000
+        23 Anu             45000
+        56 Keerthika       25000
+        45 Shobana         35000
+        45                 67000
+
+9 rows selected.
+
+SQL> desc employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                                 NUMBER(5)
+ NAME                                               VARCHAR2(10)
+ SALARY                                             NUMBER(5)
+
+SQL> alter table employee modify salary number(7);
+
+Table altered.
+
+SQL> desc employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                                 NUMBER(5)
+ NAME                                               VARCHAR2(10)
+ SALARY                                             NUMBER(7)
+
+SQL> alter table employee rename column;
+alter table employee rename column
+                                 *
+ERROR at line 1:
+ORA-00904: : invalid identifier
+
+
+SQL> alter table employee rename column name to ename;
+
+Table altered.
+
+SQL> desc employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                                 NUMBER(5)
+ ENAME                                              VARCHAR2(10)
+ SALARY                                             NUMBER(7)
+
+SQL> rename table employee to emp;
+rename table employee to emp
+       *
+ERROR at line 1:
+ORA-00903: invalid table name
+
+
+SQL> rename employee to emp;
+
+Table renamed.
+
+SQL>
